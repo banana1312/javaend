@@ -14,7 +14,7 @@
 *
 ***********************************************************************************************/
 
-package S2_2;
+package S2_3;
 
 
 
@@ -42,6 +42,8 @@ public class StartUp {
 			tokyo2.addGoods("天然黒酢", 890);
 			tokyo2.addGoods("アガリクス", 2000);
 			tokyo2.addGoods("アロエはちみつ", 650);
+			tokyo2.addGoods("青汁一杯", 120);
+
 
 
 
@@ -55,37 +57,38 @@ public class StartUp {
 
 			//(Customer)山田さん作る
 			Customer yamada = new Customer("山田");
-			yamada.createBag(1000);
+			yamada.createBag(2000);
 
 			yamada.printCustomer();
 
 
-
-			System.out.println( );
-			yamada.buyGoods(tokyo2, "海洋深層水");
 
 
 
 			System.out.println( );
 			yamada.buyGoods(tokyo2, "青汁一杯");
 
+			System.out.println( );
+			yamada.buyGoods(tokyo2, "ビタミンABC");
 
 
-			tokyo2.addGoods("青汁一杯", 120);
+			System.out.println( );
+			yamada.buyGoods(tokyo2, "アロエはちみつ");
 
 
-			System.out.println("=================================");
-			tokyo2.printShop();
-			System.out.println("=================================");
 
 
-			yamada.buyGoods(tokyo2, "青汁一杯");
+
+
+
 
 
 
 
 			System.out.println( );
 			yamada.printCustomer();
+
+
 
 
 

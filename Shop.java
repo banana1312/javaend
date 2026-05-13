@@ -1,7 +1,7 @@
 
 /***********************************************************************************************
 *
-* 課題	S2-1
+* 課題	S2-2
 *
 * クラス名	： Shop
 * 作成者　クラス名：東京
@@ -15,7 +15,7 @@
 ***********************************************************************************************/
 
 
-package S2_1;
+package S2_3;
 
 
 /**
@@ -124,7 +124,7 @@ public class Shop {
 
 	public  void printShop()
 	{
-		System.out.println("(Shop) " +shopName + "です。 TEL:" +telNo );
+		System.out.println("(Shop)　" +shopName + "です。 TEL:" +telNo );
 	}
 
 	public void saleGoods(String goodsName, ShoppingBag  shoppingBag)
@@ -141,14 +141,14 @@ public class Shop {
 				    shoppingBag.setMoney(money);
 				    // 買い物かごに商品を入れる
 				    shoppingBag.setGoods(goods);
-					System.out.println("　　(Shop)　"  +shopName + " 「" + goodsName+ "は"+  price+ "円です。まいどあり！　おつりは" + money+ "円です。」");
+					System.out.println("　　(Shop)　"  +shopName + "　「" + goodsName+ "は"+  price+ "円です。まいどあり！　おつりは" + money+ "円です。」");
 				}else//tarinai
 				{
-					System.out.println("　　(Shop)　"  +shopName + " 「" + goodsName+ "は"+  price+ "円です。お金が足りません。」");
+					System.out.println("　　(Shop)　"  +shopName + "　「" + goodsName+ "は"+  price+ "円です。お金が足りません。」");
 				}
 			}else//商品がないとき
 				{
-					System.out.println("　　(Shop)　"  +shopName + " 「" + goodsName + "は取り扱っておりません。申し訳ありません。」");
+					System.out.println("　　(Shop)　"  +shopName + " 「" + goodsName + "は取り扱っておりません。申し訳ございません。」");
 				}
 
 	}

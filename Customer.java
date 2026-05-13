@@ -1,7 +1,7 @@
 
 /***********************************************************************************************
 *
-* 課題	S2-1
+* 課題	S2-2
 *
 * クラス名	：Customer
 * 作成者　クラス名：東京
@@ -14,7 +14,7 @@
 *
 ***********************************************************************************************/
 
-package S2_1;
+package S2_3;
 
 
 
@@ -87,7 +87,7 @@ public class Customer {
 		//操作の委譲
 		public void createBag(int money)
 		{
-			this.shoppingBag = new ShoppingBag(money);
+			shoppingBag = new ShoppingBag2(money);
 		}
 
 		 // 客の情報を表示
@@ -112,11 +112,10 @@ public class Customer {
 			shop.printShop();
 		}
 
-
 		// 商品を注文
 		public void buyGoods(Shop shop, String goodsName) {
 
-		    System.out.print("(Customer) " + customerName + " 「" + goodsName + "をください」");
+		    System.out.print("(Customer)　" + customerName + "　「" + goodsName + "をください」");
 		   //Shop側のおつりとかの計算を任せる
 		    shop.saleGoods(goodsName, shoppingBag);
 
