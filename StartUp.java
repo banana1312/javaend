@@ -1,10 +1,21 @@
-/**
- * StartUp.java
- *
- * All Rights Reserved, Copyright(c) Fujitsu Learning Media Limited
- */
 
-package S2_1;
+/***********************************************************************************************
+*
+* 課題	S2-2
+*
+* クラス名	：StartUp
+* 作成者　クラス名：東京
+* 　　　　受講番号：108
+* 　　　　氏　　名：　江原　幸佑
+*
+* 完成日付	：2026/05/13
+*
+*
+*
+***********************************************************************************************/
+
+package S2_2;
+
 
 
 
@@ -20,16 +31,23 @@ public class StartUp {
 		//東京点を作る
 			Shop tokyo = new Shop ("東京店","03-1234-5678");
 
-			Shop1 tokyo1 = new Shop1 ("東京店","03-1234-5678" );
-			tokyo1.createGoods(0,"海洋深層水", 1200);
-			tokyo1.createGoods(1, "ビタミンABC", 350);
-			tokyo1.createGoods(2, "天然黒酢",890 );
-			tokyo1.createGoods(3, "アガリクス", 2000);
-			tokyo1.createGoods(4, "アロエはちみつ", 650);
+
+			Shop2 tokyo2 = new Shop2 ("東京店","03-1234-5678" );
+
+
+
+
+			tokyo2.addGoods("海洋深層水", 1200);
+			tokyo2.addGoods("ビタミンABC", 350);
+			tokyo2.addGoods("天然黒酢", 890);
+			tokyo2.addGoods("アガリクス", 2000);
+			tokyo2.addGoods("アロエはちみつ", 650);
+
+
 
 
 			System.out.println("=================================");
-			tokyo1.printShop();
+			tokyo2.printShop();
 			System.out.println("=================================");
 
 			tokyo.createGoods("海洋深層水", 1200);
@@ -44,19 +62,31 @@ public class StartUp {
 
 
 			System.out.println( );
-			yamada.buyGoods(tokyo1, "海洋深層水");
+			yamada.buyGoods(tokyo2, "海洋深層水");
 
-
-			System.out.println( );
-			yamada.buyGoods(tokyo1, "青汁一杯");
 
 
 			System.out.println( );
-			yamada.buyGoods(tokyo1, "ビタミンABC");
+			yamada.buyGoods(tokyo2, "青汁一杯");
+
+
+
+			tokyo2.addGoods("青汁一杯", 120);
+
+
+			System.out.println("=================================");
+			tokyo2.printShop();
+			System.out.println("=================================");
+
+
+			yamada.buyGoods(tokyo2, "青汁一杯");
+
+
 
 
 			System.out.println( );
 			yamada.printCustomer();
+
 
 
 
