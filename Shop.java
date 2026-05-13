@@ -15,8 +15,8 @@
 ***********************************************************************************************/
 
 
-package S2_3;
-
+package S2_4;
+import java.util.*;
 
 /**
  *
@@ -28,12 +28,14 @@ public class Shop {
 	private String shopName ;
 	private String telNo ;
 	private Goods goods ;
+	private ArrayList<Goods>  goodsList  ;
 
 	// コンストラクタ
 	public  Shop(String shopName, String telNo)
 	{
 		this.shopName = shopName;
 		this.telNo = telNo ;
+		goodsList = new ArrayList<>();
 
 	}
 
@@ -44,6 +46,11 @@ public class Shop {
 	public Shop()
 	{
 
+	}
+
+	public void addGoods(String goodsName, int price)
+	{
+		goodsList.add(new Goods(goodsName,price));
 	}
 
 
@@ -125,36 +132,69 @@ public class Shop {
 	public  void printShop()
 	{
 		System.out.println("(Shop)　" +shopName + "です。 TEL:" +telNo );
+    	for (Goods goods : goodsList)
+    	{
+    		goods.printGoods();
+    	}
 	}
 
-	public void saleGoods(String goodsName, ShoppingBag  shoppingBag)
-	{
-		int price= goods.getPrice();
-		int money =  shoppingBag.getMoney() - price;//おつり
-
-		System.out.println();
-			if(goodsName.equals(getGoods().getGoodsName()) )//商品があるか
-			{
-				if (money >= 0) //お金が足りる場合
-				{
-					// 残高を更新する
-				    shoppingBag.setMoney(money);
-				    // 買い物かごに商品を入れる
-				    shoppingBag.setGoods(goods);
-					System.out.println("　　(Shop)　"  +shopName + "　「" + goodsName+ "は"+  price+ "円です。まいどあり！　おつりは" + money+ "円です。」");
-				}else//tarinai
-				{
-					System.out.println("　　(Shop)　"  +shopName + "　「" + goodsName+ "は"+  price+ "円です。お金が足りません。」");
-				}
-			}else//商品がないとき
-				{
-					System.out.println("　　(Shop)　"  +shopName + " 「" + goodsName + "は取り扱っておりません。申し訳ございません。」");
-				}
-
+	/**
+	 * goodsListのGetter
+	 * @return goodsList
+	 */
+	public ArrayList<Goods> getGoodsList() {
+		return goodsList;
 	}
 
 
 
-}
+	/**
+	 * goodsListのSetter
+	 * @param goodsList
+	 */
+	public void setGoodsList(ArrayList<Goods> goodsList) {
+		this.goodsList = goodsList;
+	}
+
+
+
+	public void saleGoods(String goodsName, ShoppingBag shoppingBag) {
+	    boolean found = false;
+
+	    // 商品リストから探す
+	    for (Goods g : goodsList)
+	    {
+	        if (goodsName.equals(g.getGoodsName()))
+	        { // 商品があった
+	            int price = g.getPrice();
+	            int money = shoppingBag.getMoney() - price; // おつり
+
+	            System.out.println();
+	            if (money >= 0)
+	            { // お金が足りる
+	                shoppingBag.setMoney(money);
+	                shoppingBag.setGoods(g);
+	                System.out.println("　　(Shop)　"  +shopName + "　「" + goodsName+ "は"+  price+ "円です。まいどあり！　おつりは" + money+ "円です。」");
+	            } else
+	            { // 足りない
+	            	System.out.println("　　(Shop)　"  +shopName + "　「" + goodsName+ "は"+  price+ "円です。お金が足りません。」");
+	            }
+	            found = true;
+	            break; // 見つけたらループを抜ける
+	        }
+	    }
+
+	    // 商品がなかった
+	    if (found == false)
+	    {
+	    	System.out.println("　　(Shop)　"  +shopName + " 「" + goodsName + "は取り扱っておりません。申し訳ございません。」");
+	    }
+	}
+
+	}
+
+
+
+
 
 

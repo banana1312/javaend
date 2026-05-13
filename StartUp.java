@@ -1,7 +1,7 @@
 
 /***********************************************************************************************
 *
-* 課題	S2-2
+* 課題	S2-4
 *
 * クラス名	：StartUp
 * 作成者　クラス名：東京
@@ -14,7 +14,7 @@
 *
 ***********************************************************************************************/
 
-package S2_3;
+package S2_4;
 
 
 
@@ -32,24 +32,24 @@ public class StartUp {
 			Shop tokyo = new Shop ("東京店","03-1234-5678");
 
 
-			Shop2 tokyo2 = new Shop2 ("東京店","03-1234-5678" );
+//			Shop2 tokyo2 = new Shop2 ("東京店","03-1234-5678" );
 
 
 
 
-			tokyo2.addGoods("海洋深層水", 1200);
-			tokyo2.addGoods("ビタミンABC", 350);
-			tokyo2.addGoods("天然黒酢", 890);
-			tokyo2.addGoods("アガリクス", 2000);
-			tokyo2.addGoods("アロエはちみつ", 650);
-			tokyo2.addGoods("青汁一杯", 120);
+			tokyo.addGoods("海洋深層水", 1200);
+			tokyo.addGoods("ビタミンABC", 350);
+			tokyo.addGoods("天然黒酢", 890);
+			tokyo.addGoods("アガリクス", 2000);
+			tokyo.addGoods("アロエはちみつ", 650);
+			tokyo.addGoods("青汁一杯", 120);
 
 
 
 
 
 			System.out.println("=================================");
-			tokyo2.printShop();
+			tokyo.printShop();
 			System.out.println("=================================");
 
 			tokyo.createGoods("海洋深層水", 1200);
@@ -59,21 +59,15 @@ public class StartUp {
 			Customer yamada = new Customer("山田");
 			yamada.createBag(2000);
 
-			yamada.printCustomer();
 
+			yamada.buyGoods(tokyo, "青汁一杯");
 
-
+			System.out.println( );
+			yamada.buyGoods(tokyo, "ビタミンABC");
 
 
 			System.out.println( );
-			yamada.buyGoods(tokyo2, "青汁一杯");
-
-			System.out.println( );
-			yamada.buyGoods(tokyo2, "ビタミンABC");
-
-
-			System.out.println( );
-			yamada.buyGoods(tokyo2, "アロエはちみつ");
+			yamada.buyGoods(tokyo, "アロエはちみつ");
 
 
 
